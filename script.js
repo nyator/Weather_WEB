@@ -43,8 +43,9 @@ search.addEventListener('click', () => {
         
             default:
                 image.src = 'image/cloud.png';
+                
         }
-         
+
     });
 
 });
