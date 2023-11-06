@@ -13,7 +13,7 @@ body{
     align-items: center;
     min-height: 100vh;
 
-    background: url(images/background.jpg);
+    background: url(images/background2.jpg);
     background-size: cover;
     background-position: center;
 }
@@ -21,13 +21,14 @@ body{
 .container{
     position: relative;
     width: 400px;
-    height: 555px;
+    height: 100px;
     background: rgb(255, 255, 255, .1);
     backdrop-filter: blur(15px);
     border: 2px solid rgb(255, 255, 255, .2);
     border-radius: 16px;
     padding: 20px;
     color: #fff;
+    transition: height .6s ease;
 
 
 }
@@ -87,6 +88,31 @@ body{
     text-align: center;
     margin: 40px 0;
 }
+
+.weather-box,
+.weather-details,
+.not-found {
+    visibility: hidden;
+}
+
+.weather-box.active,
+.weather-details.active,
+.not-found.active {
+    visibility: visible;
+}
+
+.weather-box .box,
+.not-found .box{
+    transform: translateY(-100%);
+}
+
+.weather-box.active .box,
+.not-found.active .box{
+    transform: translateY(0%);
+    transition: transform 1s ease;
+    transition-delay: .6s;
+}
+
 
 .weather-box img{
     width: 60%;
@@ -154,4 +180,23 @@ body{
 .weather-details p{
     font-size: 14px;
     font-weight: 500;
+}
+
+.not-found {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    margin-top: 110px;
+}
+
+.not-found img{
+    width: 65%;
+}
+
+.not-found p {
+    font-size: 22px;
+    font-weight: 500;
+    margin-top: 12px;
 }
