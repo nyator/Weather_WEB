@@ -103,7 +103,7 @@ body{
 
 .weather-box .box,
 .not-found .box{
-    transform: translateY(-50%);
+    transform: translateY(-20%);
 }
 
 .weather-box.active .box,
